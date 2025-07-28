@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Professional Portfolio Website
 
 A modern, dark-themed portfolio website built with HTML, CSS, and JavaScript. Features smooth animations, responsive design, and professional styling perfect for showcasing your skills and projects.
@@ -206,3 +207,7 @@ If you need help customizing your portfolio or have questions, feel free to reac
 ---
 
 **Made with ❤️ for developers who want to stand out in their placements!** 
+=======
+# myportfolio
+to check my portfolio
+>>>>>>> 5ff71e305fe83d2ee4403a11f71ed1a57554a8b9
