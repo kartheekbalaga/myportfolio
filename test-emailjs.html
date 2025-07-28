@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EmailJS Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("50JHLZkVabanT4Ii-");
+    })();
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d1b2a;
+      color: #ffffff;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #64ffda;
+    }
+    form {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      max-width: 400px;
+      margin: 20px auto;
+      border-radius: 10px;
+      border: 1px solid #64ffda;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      color: #64ffda;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #64ffda;
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #64ffda;
+      color: #0d1b2a;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #00d4ff;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .success {
+      background: #64ffda;
+      color: #0d1b2a;
+    }
+    .error {
+      background: #ff6b6b;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+<h2>EmailJS Test - Contact Form</h2>
+
+<form id="contact-form">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="from_name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="user_email" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
+
+  <button type="submit">Send Test Message</button>
+</form>
+
+<div id="status"></div>
+
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const statusDiv = document.getElementById("status");
+    statusDiv.innerHTML = "Sending message...";
+    statusDiv.className = "status";
+    
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    console.log("Sending message with data:", { name, email, message });
+
+    // Send message to YOU (kartheekbalaga08@gmail.com)
+    emailjs.send("service_rlemr3r", "template_6hnljlh", {
+      from_name: name,
+      user_email: email,
+      message: message
+    })
+    .then(function(response) {
+      console.log("Message sent to owner!", response.status, response.text);
+      statusDiv.innerHTML = "✅ Message sent to kartheekbalaga08@gmail.com successfully!";
+      statusDiv.className = "status success";
+      
+      // Send auto-reply to USER
+      emailjs.send("service_rlemr3r", "template_8k0v7dt", {
+        name: name,
+        message: message,
+        user_email: email
+      })
+      .then(function(response) {
+        console.log("Auto-reply sent!", response.status, response.text);
+        statusDiv.innerHTML += "<br>✅ Auto-reply sent to user successfully!";
+        document.getElementById("contact-form").reset();
+      }, function(error) {
+        console.error("FAILED sending auto-reply...", error);
+        statusDiv.innerHTML += "<br>⚠️ Auto-reply failed, but main message was sent.";
+      });
+      
+    }, function(error) {
+      console.error("FAILED sending to owner...", error);
+      statusDiv.innerHTML = "❌ Failed to send message. Error: " + error.text;
+      statusDiv.className = "status error";
+    });
+  });
+</script>
+
+</body>
+</html> 

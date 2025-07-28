@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Web Developer Portfolio</title>
+    <meta name="description" content="Professional portfolio showcasing web development skills and projects">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#interests" class="nav-link">Interests</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#goals" class="nav-link">Goals</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">KARTHEEK BALAGA</span>
+                </h1>
+                <div class="hero-subtitle">
+                    I'm a <span id="typed-text"></span>
+                </div>
+                <p class="hero-description">
+                    Problem-solving enthusiast with a passion for building real-world tech solutions and exploring new technologies
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#" class="btn btn-secondary" id="download-resume">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="kartme.jpg" alt="Kartheek Balaga" style="width: 100%; height: 100%; object-fit: cover;margin-top: 80px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right" data-aos-duration="800">
+                    <p>
+                        I’m Kartheek Balaga, a Computer Science student from Visakhapatnam, currently pursuing my B.Tech at Anil Neerukonda Institute of Technology and Sciences.
+                        I enjoy building cool stuff with code, whether it's a responsive website or solving DSA problems. I’ve solved over 200 problems on LeetCode and also completed a data analysis internship where I worked with real-world datasets and created visual dashboards.
+                        At college, I’m actively involved as a coordinator in the Prismatica Club and often help organize tech and cultural events. I believe in being consistent, staying curious, and learning something new every day — no matter how small.
+                        
+                    </p>
+                    <p>
+                        I'm actively seeking opportunities to apply my skills  in a professional environment and contribute to meaningful projects that make a difference.
+                        Thanks for visiting my portfolio! Feel free to explore my work or get in touch — I’m always up for learning, building, or collaborating.
+
+                    </p>
+
+                    <!-- Education Section -->
+                    <div class="about-edu-exp">
+                        <div class="about-education" data-aos="fade-up" data-aos-delay="100">
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <ul>
+                                <li>
+                                    <strong>B.Tech in Computer Science & Engineering</strong><br>
+                                    Anil Neerukonda Institute of Technology and Sciences (ANITS), Visakhapatnam<br>
+                                    2023 – 2027 
+                                </li>
+                                <li>
+                                    <strong>Intermediate (MPC)</strong><br>
+                                    sri chaitanya Junior College, Visakhapatnam<br>
+                                    2021 – 2023
+                                </li>
+                                <li>
+                                    <strong>SSC</strong><br>
+                                    Sri vidyanikethan School, Visakhapatnam<br>
+                                    2009 – 2021
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="about-experience" data-aos="fade-up" data-aos-delay="200">
+                            <h3><i class="fas fa-briefcase"></i> Experience</h3>
+                            <ul>
+                                <li>
+                                    <strong>Data Analysis Intern</strong> – Internship (Remote)<br>
+                                    Worked with real-world datasets, created visual dashboards, and presented insights using Python and Excel.<br>
+                                    2023
+                                </li>
+                                <li>
+                                    <strong>Coordinator, Prismatica Club</strong> – ANITS<br>
+                                    Organized and managed tech/cultural events, collaborated with teams, and promoted a vibrant campus culture.<br>
+                                    2022 – Present
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Dedicated</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left" data-aos-duration="800">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Creating responsive and dynamic web applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Programming</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>DSA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-stack e-commerce application built with React, Node.js, and MongoDB. Features include user authentication, product management, and payment integration.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Firebase</span>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="interests">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Areas of Interest</h2>
+            <div class="interests-grid">
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="100" onclick="selectInterest(this)">
+                    <div class="interest-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Development</h3>
+                    <p>Exploring React Native and mobile app development to create cross-platform applications.</p>
+                    <div class="interest-details">Building Android apps, UI/UX for mobile, and learning Flutter.</div>
+                </div>
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="200" onclick="selectInterest(this)">
+                    <div class="interest-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Interested in implementing AI solutions and exploring machine learning algorithms.</p>
+                    <div class="interest-details">Working on ML projects, Kaggle competitions, and AI-powered web apps.</div>
+                </div>
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="300" onclick="selectInterest(this)">
+                    <div class="interest-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Computing</h3>
+                    <p>Learning about cloud services and deployment strategies for scalable applications.</p>
+                    <div class="interest-details">Deploying apps on AWS, Azure, and using serverless functions.</div>
+                </div>
+                <div class="interest-card" data-aos="zoom-in" data-aos-delay="400" onclick="selectInterest(this)">
+                    <div class="interest-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Understanding security best practices and implementing secure coding standards.</p>
+                    <div class="interest-details">Learning ethical hacking, CTFs, and security for web/mobile apps.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="goals">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Career Goals</h2>
+            <div class="goals-content">
+                <div class="goals-text" data-aos="fade-right" data-aos-duration="800">
+                    <div class="goal-item">
+                        <div class="goal-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h3>Short-term Goals</h3>
+                            <p>Secure a challenging role as a Full Stack Developer where I can apply my technical skills and contribute to innovative projects.</p>
+                        </div>
+                    </div>
+                    <div class="goal-item">
+                        <div class="goal-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="goal-content">
+                            <h3>Long-term Goals</h3>
+                            <p>Lead development teams, mentor junior developers, and contribute to open-source projects that make a positive impact.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="goals-visual" data-aos="fade-left" data-aos-duration="800">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>2024</h4>
+                                <p>Land first developer role</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>2025</h4>
+                                <p>Lead project development</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>2026</h4>
+                                <p>Senior developer position</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="800">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>kartheekbalaga08@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Vizianagaram,AP,india</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>8328471814</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left" data-aos-duration="800">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="from_name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="user_email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <p id="form-message" style="margin-top: 10px; text-align: center; color: #64ffda;"></p>
+                </div>
+            </div>
+            <div class="social-links" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://www.linkedin.com/in/kartheek-balaga-8a8996295/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/kartheek08.6/" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+  
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
