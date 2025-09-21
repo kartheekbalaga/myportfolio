@@ -4,29 +4,45 @@
   <meta charset="UTF-8">
   <title>EmailJS Test</title>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("50JHLZkVabanT4Ii-");
-    })();
-  </script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #0d1b2a;
+      background: #000000;
       color: #ffffff;
       padding: 20px;
+      min-height: 100vh;
     }
     h2 {
       text-align: center;
       color: #64ffda;
     }
+    .test-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .test-buttons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .test-btn {
+      background: #64ffda;
+      color: #0d1b2a;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+    .test-btn:hover {
+      background: #00d4ff;
+    }
     form {
       background: rgba(255,255,255,0.1);
       padding: 20px;
-      max-width: 400px;
-      margin: 20px auto;
       border-radius: 10px;
       border: 1px solid #64ffda;
+      margin-bottom: 20px;
     }
     label {
       font-weight: bold;
@@ -44,7 +60,7 @@
       color: #ffffff;
       box-sizing: border-box;
     }
-    button {
+    button[type="submit"] {
       margin-top: 15px;
       padding: 10px 20px;
       background: #64ffda;
@@ -55,14 +71,15 @@
       width: 100%;
       font-weight: bold;
     }
-    button:hover {
+    button[type="submit"]:hover {
       background: #00d4ff;
     }
     .status {
       margin-top: 10px;
-      padding: 10px;
+      padding: 15px;
       border-radius: 5px;
       text-align: center;
+      font-weight: bold;
     }
     .success {
       background: #64ffda;
@@ -72,73 +89,233 @@
       background: #ff6b6b;
       color: #ffffff;
     }
+    .info {
+      background: #00d4ff;
+      color: #0d1b2a;
+    }
+    .debug-info {
+      background: rgba(255,255,255,0.05);
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+      border: 1px solid rgba(100, 255, 218, 0.3);
+    }
+    .debug-info h3 {
+      color: #64ffda;
+      margin-top: 0;
+    }
+    .debug-info pre {
+      background: rgba(0,0,0,0.3);
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 12px;
+    }
+    
+    /* Floating particles for space effect */
+    .floating-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(100, 255, 218, 0.6);
+      border-radius: 50%;
+      animation: float 15s linear infinite;
+    }
+    
+    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+    .particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+    .particle:nth-child(4) { left: 40%; animation-delay: 6s; }
+    .particle:nth-child(5) { left: 50%; animation-delay: 8s; }
+    .particle:nth-child(6) { left: 60%; animation-delay: 10s; }
+    .particle:nth-child(7) { left: 70%; animation-delay: 12s; }
+    .particle:nth-child(8) { left: 80%; animation-delay: 14s; }
+    .particle:nth-child(9) { left: 90%; animation-delay: 16s; }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Floating Particles for Space Effect -->
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
 
-<h2>EmailJS Test - Contact Form</h2>
+<div class="test-container">
+  <h2>EmailJS Test - Contact Form</h2>
 
-<form id="contact-form">
-  <label for="name">Name</label>
-  <input type="text" id="name" name="from_name" required>
+  <div class="test-buttons">
+    <button class="test-btn" onclick="testEmailJS()">Test EmailJS Connection</button>
+    <button class="test-btn" onclick="showDebugInfo()">Show Debug Info</button>
+    <button class="test-btn" onclick="clearStatus()">Clear Status</button>
+  </div>
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="user_email" required>
+  <form id="contact-form" onsubmit="return false;">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="from_name" required>
 
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="user_email" required>
 
-  <button type="submit">Send Test Message</button>
-</form>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
-<div id="status"></div>
+    <button type="submit" onclick="sendTestEmail()">Send Test Message</button>
+  </form>
+
+  <div id="status"></div>
+  
+  <div id="debug-info" class="debug-info" style="display: none;">
+    <h3>Debug Information</h3>
+    <pre id="debug-content"></pre>
+  </div>
+</div>
 
 <script>
-  document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    
-    const statusDiv = document.getElementById("status");
-    statusDiv.innerHTML = "Sending message...";
-    statusDiv.className = "status";
-    
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+// Initialize EmailJS
+(function() {
+  try {
+    emailjs.init("50JHLZkVabanT4Ii-");
+    console.log("EmailJS initialized successfully");
+    updateStatus("✅ EmailJS initialized successfully", "success");
+  } catch (error) {
+    console.error("Failed to initialize EmailJS:", error);
+    updateStatus("❌ Failed to initialize EmailJS: " + error.message, "error");
+  }
+})();
 
-    console.log("Sending message with data:", { name, email, message });
+function updateStatus(message, type = "info") {
+  const statusDiv = document.getElementById("status");
+  statusDiv.innerHTML = message;
+  statusDiv.className = `status ${type}`;
+  console.log(`Status: ${message}`);
+}
 
-    // Send message to YOU (kartheekbalaga08@gmail.com)
-    emailjs.send("service_rlemr3r", "template_6hnljlh", {
-      from_name: name,
-      user_email: email,
-      message: message
+function testEmailJS() {
+  if (typeof emailjs !== 'undefined') {
+    updateStatus("✅ EmailJS is properly loaded and initialized!", "success");
+    console.log("EmailJS test: Successfully loaded");
+  } else {
+    updateStatus("❌ EmailJS is not loaded. Please check your internet connection.", "error");
+    console.log("EmailJS test: Failed to load");
+  }
+}
+
+function showDebugInfo() {
+  const debugDiv = document.getElementById("debug-info");
+  const debugContent = document.getElementById("debug-content");
+  
+  const debugData = {
+    emailjsLoaded: typeof emailjs !== 'undefined',
+    userAgent: navigator.userAgent,
+    timestamp: new Date().toISOString(),
+    serviceId: "service_rlemr3r",
+    templateId: "template_6hnljlh",
+    publicKey: "50JHLZkVabanT4Ii-"
+  };
+  
+  debugContent.textContent = JSON.stringify(debugData, null, 2);
+  debugDiv.style.display = "block";
+}
+
+function clearStatus() {
+  const statusDiv = document.getElementById("status");
+  statusDiv.innerHTML = "";
+  statusDiv.className = "status";
+}
+
+function sendTestEmail() {
+  event.preventDefault();
+  
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  // Validation
+  if (!name || !email || !message) {
+    updateStatus("❌ Please fill in all fields!", "error");
+    return;
+  }
+
+  updateStatus("🔄 Sending message...", "info");
+  console.log("Sending message with data:", { name, email, message });
+
+  // Check if EmailJS is properly initialized
+  if (typeof emailjs === 'undefined') {
+    updateStatus("❌ Email service not available. Please refresh the page.", "error");
+    return;
+  }
+
+  // Send message to YOU (kartheekbalaga08@gmail.com)
+  emailjs.send("service_rlemr3r", "template_6hnljlh", {
+    from_name: name,
+    user_email: email,
+    message: message
+  })
+  .then(function(response) {
+    console.log("Message sent to owner!", response.status, response.text);
+    updateStatus("✅ Message sent to kartheekbalaga08@gmail.com successfully!", "success");
+    
+    // Send auto-reply to USER
+    emailjs.send("service_rlemr3r", "template_8k0v7dt", {
+      name: name,
+      message: message,
+      user_email: email
     })
     .then(function(response) {
-      console.log("Message sent to owner!", response.status, response.text);
-      statusDiv.innerHTML = "✅ Message sent to kartheekbalaga08@gmail.com successfully!";
-      statusDiv.className = "status success";
-      
-      // Send auto-reply to USER
-      emailjs.send("service_rlemr3r", "template_8k0v7dt", {
-        name: name,
-        message: message,
-        user_email: email
-      })
-      .then(function(response) {
-        console.log("Auto-reply sent!", response.status, response.text);
-        statusDiv.innerHTML += "<br>✅ Auto-reply sent to user successfully!";
-        document.getElementById("contact-form").reset();
-      }, function(error) {
-        console.error("FAILED sending auto-reply...", error);
-        statusDiv.innerHTML += "<br>⚠️ Auto-reply failed, but main message was sent.";
-      });
-      
+      console.log("Auto-reply sent!", response.status, response.text);
+      updateStatus("✅ Message sent successfully! Auto-reply sent to user!", "success");
+      document.getElementById("contact-form").reset();
     }, function(error) {
-      console.error("FAILED sending to owner...", error);
-      statusDiv.innerHTML = "❌ Failed to send message. Error: " + error.text;
-      statusDiv.className = "status error";
+      console.error("FAILED sending auto-reply...", error);
+      updateStatus("✅ Message sent! Auto-reply failed.", "success");
+      document.getElementById("contact-form").reset();
     });
+    
+  }, function(error) {
+    console.error("FAILED sending to owner...", error);
+    updateStatus("❌ Failed to send message. Error: " + (error.text || error.message || 'Unknown error'), "error");
   });
+}
+
+// Prevent form from submitting normally
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  return false;
+});
 </script>
 
 </body>

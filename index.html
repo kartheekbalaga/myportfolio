@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Web Developer Portfolio</title>
+    <title>Kartheek Balaga - Web Developer Portfolio</title>
+    <link rel="icon" type="image/png" href="kbicon.jpg">
     <meta name="description" content="Professional portfolio showcasing web development skills and projects">
     
     <!-- AOS Animation Library -->
@@ -19,6 +20,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Floating Particles for Space Effect -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -59,7 +73,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
-            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="hero-content" data-aos="fade-up" data-aos-duration="600">
                 <h1 class="hero-title">
                     Hi, I'm <span class="highlight">KARTHEEK BALAGA</span>
                 </h1>
@@ -72,21 +86,18 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                   <a href="kartheek_resume.pdf" class="btn btn-secondary" download="Kartheek_Balaga_Resume.pdf">
+                   <a href="kartheek_resume.pdf" target="_blank" class="btn btn-secondary" download>
                        <i class="fas fa-download"></i> Download Resume
                   </a>
                 </div>
             </div>
-            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="600">
                 <div class="profile-card">
                     <div class="profile-avatar">
-                        <img src="kartme.jpg" alt="Kartheek Balaga" style="width: 100%; height: 100%; object-fit: cover;margin-top: 80px;">
+                        <img src="kartheek_balaga.jpeg" alt="Kartheek Balaga" style="width: 100%; height: 100%; object-fit: cover;margin-top: 100px;">
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
         </div>
     </section>
 
@@ -95,7 +106,7 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content">
-                <div class="about-text" data-aos="fade-right" data-aos-duration="800">
+                                    <div class="about-text" data-aos="fade-right" data-aos-duration="500">
                     <p>
                         I’m Kartheek Balaga, a Computer Science student from Visakhapatnam, currently pursuing my B.Tech at Anil Neerukonda Institute of Technology and Sciences.
                         I enjoy building cool stuff with code, whether it's a responsive website or solving DSA problems. I’ve solved over 200 problems on LeetCode and also completed a data analysis internship where I worked with real-world datasets and created visual dashboards.
@@ -165,7 +176,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-image" data-aos="fade-left" data-aos-duration="800">
+                <div class="about-image" data-aos="fade-left" data-aos-duration="500">
                     <div class="about-card">
                         <div class="card-icon">
                             <i class="fas fa-code"></i>
@@ -337,7 +348,7 @@
   <div class="container">
     <h2 class="section-title" data-aos="fade-up">Career Goals</h2>
     <div class="goals-content">
-      <div class="goals-text" data-aos="fade-right" data-aos-duration="800">
+      <div class="goals-text" data-aos="fade-right" data-aos-duration="500">
         <div class="goal-item">
           <div class="goal-icon">
             <i class="fas fa-briefcase"></i>
@@ -357,7 +368,7 @@
           </div>
         </div>
       </div>
-      <div class="goals-visual" data-aos="fade-left" data-aos-duration="800">
+      <div class="goals-visual" data-aos="fade-left" data-aos-duration="500">
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-dot"></div>
@@ -391,8 +402,11 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            
+            <!-- Social Links Row -->
+            
             <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right" data-aos-duration="800">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="500">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -417,13 +431,14 @@
                         </div>
                         <div class="contact-details">
                             <h3>Phone</h3>
-                            <p>8328471814</p>
+                            <p>+91 8328471814</p>
                         </div>
                     </div>
+
                 </div>
-                <div class="contact-form" data-aos="fade-left" data-aos-duration="800">
+                <div class="contact-form" data-aos="fade-left" data-aos-duration="500">
                     <form id="contact-form">
-                        <div class="form-group">
+                        <div class="form-group"> 
                             <input type="text" name="from_name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
@@ -434,10 +449,9 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
-                    <p id="form-message" style="margin-top: 10px; text-align: center; color: #64ffda;"></p>
+                    <p id="form-message"></p>
                 </div>
-            </div>
-            <div class="social-links" data-aos="fade-up" data-aos-delay="200">
+                <div class="social-links-row" data-aos="fade-up" data-aos-delay="100">
                 <a href="https://www.linkedin.com/in/kartheek-balaga-8a8996295/" class="social-link" target="_blank">
                     <i class="fab fa-linkedin"></i>
                 </a>
@@ -451,11 +465,20 @@
                     <i class="fab fa-twitter"></i>
                 </a>
             </div>
+                
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-  
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Kartheek Balaga. All rights reserved.</p>
+                <!-- <p>Built with ❤️ using HTML, CSS & JavaScript</p> -->
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
