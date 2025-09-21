@@ -344,7 +344,7 @@
     </section>
 
     <!-- Goals Section -->
-    <section id="goals" class="goals">
+<section id="goals" class="goals">
   <div class="container">
     <h2 class="section-title" data-aos="fade-up">Career Goals</h2>
     <div class="goals-content">
@@ -370,21 +370,21 @@
       </div>
       <div class="goals-visual" data-aos="fade-left" data-aos-duration="500">
         <div class="timeline">
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-right" data-aos-delay="0">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <h4>2024</h4>
               <p>Complete key portfolio projects, ace placements</p>
             </div>
           </div>
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <h4>2025</h4>
-              <p>Get placed, deliver full-stack apps with real-world impact</p>
+              <p>Get placed, deliver ML projects,deliver full-stack apps with real-world impact</p>
             </div>
           </div>
-          <div class="timeline-item">
+          <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <h4>2026</h4>
@@ -437,20 +437,23 @@
 
                 </div>
                 <div class="contact-form" data-aos="fade-left" data-aos-duration="500">
-                    <form id="contact-form">
-                        <div class="form-group"> 
-                            <input type="text" name="from_name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="user_email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                    <p id="form-message"></p>
-                </div>
+  <h2 style="text-align:center; color:#64ffda;">Contact Me</h2>
+
+  <form id="contact-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="from_name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="user_email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div id="status" class="status"></div>
+</div>
                 <div class="social-links-row" data-aos="fade-up" data-aos-delay="100">
                 <a href="https://www.linkedin.com/in/kartheek-balaga-8a8996295/" class="social-link" target="_blank">
                     <i class="fab fa-linkedin"></i>
